@@ -11,7 +11,7 @@
                                 <li v-for="error in errors" :key="error">{{ error }}</li>
                             </ul>
                         </div>
- 
+
                         <form @submit.prevent="updateArticle">
                             <div class='form-group'>
                                 <label htmlFor='title'>Title</label>
@@ -23,8 +23,8 @@
                             </div>
                             <div class='form-group'>
                                 <router-link :to="{ name: 'home' }" class="btn btn-secondary">Back</router-link>
-                                  
-                                  
+
+
                                 <button class='btn btn-primary'>Create</button>
                             </div>
                         </form>
@@ -52,9 +52,9 @@
     },
     methods: {
         updateArticle(e){
-             
-            if (this.$data.article.title != null &amp;&amp; this.$data.article.content != null) {
-                 
+
+            if (this.$data.article.title != null && this.$data.article.content != null) {
+
                 this.$swal.fire({
                     title: 'Success',
                     text: "Article created successfully",
@@ -67,17 +67,17 @@
                 });
                 return true;
             }
- 
- 
+
+
             this.errors = [];
- 
+
             if (!this.title) {
                 this.errors.push('Title wajib diisi !');
             }
             if (!this.content) {
                 this.errors.push('Content wajib diisi !');
             }
- 
+
             e.preventDefault();
         }
     }
